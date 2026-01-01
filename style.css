@@ -1,0 +1,43 @@
+:root {
+    --cyan: #00f2ff;
+    --bg: #0b141d;
+    --card: #111e29;
+    --red: #ff4444;
+}
+
+body, html { margin: 0; padding: 0; background: var(--bg); color: white; font-family: 'Orbitron', sans-serif; overflow: hidden; height: 100%; }
+
+#ui-layer { position: absolute; inset: 0; z-index: 10; display: flex; flex-direction: column; align-items: center; pointer-events: none; }
+#ui-layer * { pointer-events: all; }
+
+.top-bar { display: flex; gap: 15px; margin-top: 15px; }
+.stat { background: rgba(0,242,255,0.05); border: 1px solid var(--cyan); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; box-shadow: 0 0 10px rgba(0,242,255,0.2); }
+.blue-text { color: var(--cyan); }
+
+#main-menu { width: 380px; margin-top: 40px; text-align: center; }
+.header h1 { font-size: 1.4rem; margin: 10px 0 5px; }
+.header p { font-size: 0.75rem; color: #6a8095; margin-bottom: 20px; }
+
+.difficulty-card { background: var(--card); border: 2px solid #1c3245; border-radius: 25px; padding: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
+.level-icon { width: 70px; height: 70px; background: var(--cyan); border-radius: 50%; margin: 0 auto 15px; line-height: 70px; font-size: 2rem; }
+
+.feat-list { text-align: left; list-style: none; padding: 0; font-size: 0.8rem; color: #a0b0c0; margin: 15px 0; }
+.feat-list li.done::before { content: "✓ "; color: #00ff88; }
+
+.grid-stats { display: grid; grid-template-columns: repeat(3, 1fr); background: #081017; padding: 12px; border-radius: 12px; font-size: 0.65rem; margin-bottom: 20px; }
+
+.start-btn { width: 100%; padding: 15px; border: none; border-radius: 10px; background: var(--cyan); font-weight: bold; cursor: pointer; transition: 0.2s; }
+.start-btn:hover { filter: brightness(1.2); transform: scale(1.02); }
+
+.nav-row { display: flex; gap: 8px; margin-top: 15px; justify-content: center; }
+.nav-row button { background: #1c3245; border: none; color: white; padding: 8px 12px; border-radius: 5px; cursor: pointer; font-size: 0.6rem; }
+
+/* Game Controls */
+.hidden { display: none !important; }
+.joy-base { position: absolute; bottom: 60px; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; }
+#joy-move { left: 40px; }
+#joy-aim { right: 40px; }
+.joy-stick { position: absolute; top: 50%; left: 50%; width: 50px; height: 50px; background: rgba(255,255,255,0.4); border-radius: 50%; transform: translate(-50%, -50%); }
+.joy-stick.red { background: rgba(255, 68, 68, 0.4); }
+
+#gameCanvas { position: fixed; top: 0; left: 0; z-index: 1; }
