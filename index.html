@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Colt 1v1 Mecha Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="ui-layer">
+        <div class="top-bar">
+            <div class="stat"><span class="blue-text">❤️</span> <span id="p-hp-ui">5600</span> HP</div>
+            <div class="stat"><span class="blue-text">🎯</span> 1260 DMG</div>
+            <div class="stat"><span class="blue-text">⚡</span> 4200 BULLET</div>
+        </div>
+
+        <div id="main-menu">
+            <div class="header">
+                <div class="icon-box">📊</div>
+                <h1>ZORLUK SEVİYESİ SEÇ</h1>
+                <p>Colt 1v1 mekaniğine uygun aimbot ve dodge geliştirin</p>
+            </div>
+
+            <div class="difficulty-card" id="card">
+                <div class="level-icon" id="l-icon">🌱</div>
+                <h2 id="l-name">KOLAY</h2>
+                <span id="l-desc">Başlangıç</span>
+                
+                <ul class="feat-list">
+                    <li class="done">Sabit hareketli bot</li>
+                    <li class="done">Yavaş atış hızı</li>
+                    <li class="done">Basit dodging pattern</li>
+                    <li class="done">Geniş hitbox</li>
+                    <li id="special-feat" class="done">%50 dodge chance</li>
+                </ul>
+
+                <div class="grid-stats">
+                    <div class="g-item">Bot HP:<br><b id="st-hp">4200</b></div>
+                    <div class="g-item">Reaction:<br><b id="st-react">300ms</b></div>
+                    <div class="g-item">Accuracy:<br><b id="st-acc">%60</b></div>
+                </div>
+
+                <button class="start-btn" onclick="initGame()">KOLAYI BAŞLAT</button>
+            </div>
+
+            <div class="nav-row">
+                <button onclick="updateSelection('kolay')">KOLAY</button>
+                <button onclick="updateSelection('orta')">ORTA</button>
+                <button onclick="updateSelection('zor')">ZOR</button>
+                <button onclick="updateSelection('efsane')">EFSANE</button>
+            </div>
+        </div>
+
+        <div id="game-controls" class="hidden">
+            <div id="joy-move" class="joy-base"><div class="joy-stick"></div></div>
+            <div id="joy-aim" class="joy-base"><div class="joy-stick red"></div></div>
+            <div class="game-footer">
+                <button onclick="location.reload()">ÇIKIŞ</button>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
